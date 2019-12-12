@@ -21,4 +21,5 @@ route::get('/services','ServiceController@index');
 
 route::get('/news','NewsController@index');
 
-
+route::get('/random','RandomController@randomView');
+route::post('/random','RandomController@random');
