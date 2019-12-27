@@ -23,3 +23,15 @@ route::get('/news','NewsController@index');
 
 route::get('/random','RandomController@randomView');
 route::post('/random','RandomController@random');
+
+route::get('/incDecNumber','IncDecController@myNumberDefault');
+route::get('/incDecNumber/{num}','IncDecController@myNumber');
+route::post('/incDecNumber/{num}','IncDecController@myNumberAdjust');
+
+route::get('/student-form/create','StudentController@create');
+route::post('/student-form/create','StudentController@store');
+route::get('/student-list','StudentController@index');
+
+route::get('/department-form/create','DepartmentController@create');
+route::post('/department-form/create','DepartmentController@store');
+route::get('/department-list','DepartmentController@index');
