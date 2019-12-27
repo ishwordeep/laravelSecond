@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Faculty;
 class FacultyController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        //
+        $facultyList=Faculty::get();
+        return view('faculty-list')->with('faculties',$facultyList);
     }
 
     /**
@@ -23,7 +24,7 @@ class FacultyController extends Controller
      */
     public function create()
     {
-        //
+        return view('faculty-form');
     }
 
     /**
@@ -34,7 +35,12 @@ class FacultyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Faculty::create([
+            'name'=>$request->name,
+            'dep_name'=>$request->dep_name
+        ]);
+        return redirect('/faculty-list');
+
     }
 
     /**

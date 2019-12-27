@@ -35,3 +35,7 @@ route::get('/student-list','StudentController@index');
 route::get('/department-form/create','DepartmentController@create');
 route::post('/department-form/create','DepartmentController@store');
 route::get('/department-list','DepartmentController@index');
+
+route::get('/faculty-form/create','FacultyController@create');
+route::post('/faculty-form/create','FacultyController@store');
+route::get('/faculty-list','FacultyController@index');
